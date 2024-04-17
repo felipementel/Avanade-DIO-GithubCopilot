@@ -50,9 +50,9 @@ jobs:
           mkdir -p .sonar/scanner
           dotnet tool update dotnet-sonarscanner --tool-path .sonar/scanner
 
-          - name: Install SonarCloud scanner
-          run: |
-            dotnet tool install --global dotnet-sonarscanner
+      - name: Install SonarCloud scanner
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
 
       - name: Build and analyze
         env:
