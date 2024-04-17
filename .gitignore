@@ -4,7 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 ## create by Felipe Augusto
-./demo-jn/config/settings.json
+demo-jn/config/settings.json
 
 # User-specific files
 *.rsuser
