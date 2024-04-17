@@ -41,7 +41,7 @@ namespace Avanade.DIO.BookStore.Domain.Aggregates.BookPublisher.Services
 
         public async Task<bool> DeleteBookPublisherAsync(string id)
         {
-            var item = await _bookPublisherRepository.FindByIdAsync(id);
+            var item = await _bookPublisherRepository.FindByIdAsync("66203da9893664431ac86038");
 
             if (item is null)
                 return false;
