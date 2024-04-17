@@ -1,4 +1,5 @@
-﻿using Avanade.DIO.BookStore.Application.Interfaces.Book;
+﻿using System.Diagnostics.CodeAnalysis;
+using Avanade.DIO.BookStore.Application.Interfaces.Book;
 using Avanade.DIO.BookStore.Application.Interfaces.BookPublisher;
 using Avanade.DIO.BookStore.Application.Services.Book;
 using Avanade.DIO.BookStore.Application.Services.BookPublisher;
@@ -21,6 +22,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Avanade.DIO.BookStore.Infra.CrossCutting
 {
+    [ExcludeFromCodeCoverage]
     public static class DependencyInjection
     {
         public static void AddRegisterDependencyInjections(this IServiceCollection serviceCollection)

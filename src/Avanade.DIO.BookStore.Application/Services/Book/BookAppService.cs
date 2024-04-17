@@ -3,10 +3,12 @@ using Avanade.DIO.BookStore.Application.Dtos.Book;
 using Avanade.DIO.BookStore.Application.Interfaces.Book;
 using Avanade.DIO.BookStore.Domain.Aggregates.Book.Interfaces.Services;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 namespace Avanade.DIO.BookStore.Application.Services.Book
 {
+    [ExcludeFromCodeCoverage]
     public class BookAppService : IBookAppService
     {
         private readonly IMapper _mapper;

@@ -1,4 +1,5 @@
-﻿using Avanade.DIO.BookStore.Domain.Aggregates;
+﻿using System.Diagnostics.CodeAnalysis;
+using Avanade.DIO.BookStore.Domain.Aggregates;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Bson.Serialization.Serializers;
@@ -6,6 +7,7 @@ using MongoDB.Bson.Serialization.Serializers;
 //docs: https://mongodb.github.io/mongo-csharp-driver/2.0/reference/bson/mapping/
 namespace Avanade.DIO.BookStore.Infra.Database.Maps.Base
 {
+    [ExcludeFromCodeCoverage]
     public static class BaseEntityMap
     {
         public static void Configure()

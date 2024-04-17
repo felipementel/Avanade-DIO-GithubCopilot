@@ -1,7 +1,9 @@
-﻿using MongoDB.Bson.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using MongoDB.Bson.Serialization;
 
 namespace Avanade.DIO.BookStore.Infra.Database.Maps.Book
 {
+    [ExcludeFromCodeCoverage]
     public static class BookMap
     {
         public static void Configure()

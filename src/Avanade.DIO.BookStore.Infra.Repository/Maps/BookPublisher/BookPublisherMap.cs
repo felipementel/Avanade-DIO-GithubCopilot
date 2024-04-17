@@ -1,8 +1,10 @@
-﻿using MongoDB.Bson.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 
 namespace Avanade.DIO.BookStore.Infra.Database.Maps.BookPublisher
 {
+    [ExcludeFromCodeCoverage]
     public static class BookPublisherMap
     {
         public static void Configure()
