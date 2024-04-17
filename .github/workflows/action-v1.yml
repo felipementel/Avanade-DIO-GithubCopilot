@@ -1,4 +1,4 @@
-name: Validation Code v1 | SonarCloud
+name: Validation Code v1| SonarCloud
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -7,7 +7,7 @@ on:
 env:
   imageName: avanade-dio-github-copilot
   dotnetVersion: 8.x
-  csprojFolder: src/Avanade.DIO.GithubCopilot.API/Avanade.DIO.GithubCopilot.API.csproj
+  csprojFolder: src/Avanade.DIO.BookStore.Api/Avanade.DIO.BookStore.Api.csproj
 
 jobs:
   build-and-sonar:
@@ -49,10 +49,6 @@ jobs:
         run: |
           mkdir -p .sonar/scanner
           dotnet tool update dotnet-sonarscanner --tool-path .sonar/scanner
-
-      - name: Install SonarCloud scanner
-        run: |
-          dotnet tool install --global dotnet-sonarscanner
 
       - name: Build and analyze
         env:

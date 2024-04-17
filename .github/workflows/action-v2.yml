@@ -7,7 +7,7 @@ on:
 env:
   imageName: avanade-dio-github-copilot
   dotnetVersion: 8.x
-  csprojFolder: ./**/**.csproj
+  csprojFolder: src/Avanade.DIO.BookStore.Api/Avanade.DIO.BookStore.Api.csproj
 
 jobs:
   build-and-sonar:
