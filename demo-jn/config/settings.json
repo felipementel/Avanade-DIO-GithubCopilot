@@ -1,0 +1,5 @@
+{
+  "model": "gpt-4-canal-deploy",
+  "endpoint": "https://xxx.openai.azure.com",
+  "apikey": "yyy"
+}
