@@ -3,9 +3,12 @@
 Projeto criado para demonstração em Live na DIO de algumas capacidades do Github Copilot.
 Data: 17/4/2024
 
+OBS: A apresentação utilizada na live, esta dentro da pasta docs em formato PDF! 
+
 # 1. Como montar o ambiente local
 
 Pré-requisito: .NET 8, Docker, Docker-Compose, WSL2
+
 Pacotes:
 
 1.1. Clone o repositorio
@@ -20,7 +23,7 @@ git clone https://github.com/felipementel/Avanade-DIO-GithubCopilot.git
 docker-compose -f docker-infra.yml up -d
 ```
 
-2. Criando os projetos de testes
+2. Criando o projeto de testes
 ```
 dotnet new xunit -o .\src\Tests\Avanade.DIO.BookStore.Api.Tests -n Avanade.DIO.BookStore.Api.Tests
 ```
