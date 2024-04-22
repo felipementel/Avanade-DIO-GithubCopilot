@@ -23,7 +23,7 @@ git clone https://github.com/felipementel/Avanade-DIO-GithubCopilot.git
 docker-compose -f docker-infra.yml up -d
 ```
 
-2. Criando o projeto de testes
+# 2. Criando o projeto de testes
 ```
 dotnet new xunit -o .\src\Tests\Avanade.DIO.BookStore.Api.Tests -n Avanade.DIO.BookStore.Api.Tests
 ```
@@ -102,7 +102,7 @@ e depois execute:
 reportgenerator -reports:..\TestResults\DotnetCoverageCollect\**\coverage.cobertura.xml  -targetdir:..\TestResults\DotnetCoverageCollect\CoverageReport -reporttypes:"Html;SonarQube;JsonSummary;Badges" -verbosity:Verbose -title:Avanade.DIO.BookStore -tag:canal-deploy
 ```
 
-4. Para executar o projeto
+# 4. Para executar o projeto
 
 ```
 dotnet run --project .\src\Avanade.DIO.BookStore.Api\Avanade.DIO.BookStore.Api.csproj --launch-profile Avanade.DIO.BookStore.Api
