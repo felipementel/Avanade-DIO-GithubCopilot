@@ -20,9 +20,41 @@ git clone https://github.com/felipementel/Avanade-DIO-GithubCopilot.git
 docker-compose -f docker-infra.yml up -d
 ```
 
-# 2. Testes de unidade
+2. Criando os projetos de testes
+```
+dotnet new xunit -o .\src\Tests\Avanade.DIO.BookStore.Api.Tests -n Avanade.DIO.BookStore.Api.Tests
+```
+```
+dotnet add .\src\Tests\Avanade.DIO.BookStore.Api.Tests reference .\src\Avanade.DIO.BookStore.Api
+```
+```
+dotnet add .\src\Tests\Avanade.DIO.BookStore.Api.Tests reference .\src\Avanade.DIO.BookStore.Application
+```
+```
+dotnet add .\src\Tests\Avanade.DIO.BookStore.Api.Tests reference .\src\Avanade.DIO.BookStore.Domain
+```
+```
+dotnet sln .\src\Avanade.DIO.BookStore.sln add .\src\Tests\Avanade.DIO.BookStore.Api.Tests
+```
+```
+dotnet add .\src\Tests\Avanade.DIO.BookStore.Api.Tests package Moq --version 4.20.70
+```
+```
+dotnet add .\src\Tests\Avanade.DIO.BookStore.Api.Tests package Bogus --version 35.5.0
+```
+```
+dotnet add .\src\Tests\Avanade.DIO.BookStore.Api.Tests package FluentAssertions --version 7.0.0-alpha.3
+```
+```
+dotnet add .\src\Tests\Avanade.DIO.BookStore.Api.Tests package coverlet.msbuild --version 6.0.2
+```
+```
+dotnet add .\src\Tests\Avanade.DIO.BookStore.Api.Tests package coverlet.collector --version 6.0.2
+```
 
-2.1. Instalar os seguintes pacotes utilizando powershell
+# 3. Testes de unidade
+
+3.1. Instalar os seguintes pacotes utilizando powershell
 
 ```
 dotnet tool install --global dotnet-reportgenerator-globaltool
@@ -32,18 +64,18 @@ dotnet tool install --global dotnet-reportgenerator-globaltool
 dotnet tool install --global dotnet-coverage
 ```
 
-2.2 Geração dos relatórios
+3.2 Geração dos relatórios
 
-1. Como Executar:
-   1.1 A partir da pasta **_src_** execute o comando:
+### Como Executar:
+   3.2.1 A partir da pasta **_src_** execute o comando:
 
 ```
 dotnet test
 ```
 
-2. Geração de relatório de testes
+3.3. Geração de relatório de testes
 
-   1.1 A partir da pasta **_src_** execute o comando:
+   3.3.1. A partir da pasta **_src_** execute o comando:
 
 ```
 dotnet test --collect:"XPlat Code Coverage" --logger "console;verbosity=detailed" --results-directory ..\TestResults\XPlatCodeCoverage\
@@ -65,4 +97,10 @@ e depois execute:
 
 ```
 reportgenerator -reports:..\TestResults\DotnetCoverageCollect\**\coverage.cobertura.xml  -targetdir:..\TestResults\DotnetCoverageCollect\CoverageReport -reporttypes:"Html;SonarQube;JsonSummary;Badges" -verbosity:Verbose -title:Avanade.DIO.BookStore -tag:canal-deploy
+```
+
+4. Para executar o projeto
+
+```
+dotnet run --project .\src\Avanade.DIO.BookStore.Api\Avanade.DIO.BookStore.Api.csproj --launch-profile Avanade.DIO.BookStore.Api
 ```
